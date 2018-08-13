@@ -1,0 +1,23 @@
+modules:
+  - docassemble.base.util
+---
+question: |
+  Do you live in Massachusetts?
+yesno: in_massachusetts
+---
+mandatory: True
+code: |
+  if in_massachusetts:
+    state = "Massachusetts"
+  else:
+    state
+---
+question: |
+  What is your state?
+fields:
+  - State: state
+    code: states_list()
+---
+mandatory: True
+question: |
+  You live in ${ state }
